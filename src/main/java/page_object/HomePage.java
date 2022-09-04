@@ -17,7 +17,7 @@ public class HomePage extends BaseSettings {
     //форма, появляющая при заполнении номера заказа правильным значением существующего заказа
     private final By wrongNumberOfOrderImage = By.className("Track_NotFound__6oaoY");
     //кнопка "Да, все привыкли"
-    private final  By cookieButton = By.id("rcc-confirm-button");
+    private final By cookieButton = By.id("rcc-confirm-button");
 
     //вопросы в секции "Вопросы о важном"
     private final By firstQuestion = By.xpath(".//div[text() = \"Сколько это стоит? И как оплатить?\"]");
@@ -25,7 +25,7 @@ public class HomePage extends BaseSettings {
     private final By thirdQuestion = By.xpath(".//div[text() = \"Как рассчитывается время аренды?\"]");
     private final By forthQuestion = By.xpath(".//div[text() = \"Можно ли заказать самокат прямо на сегодня?\"]");
     private final By fifthQuestion = By.xpath(".//div[text() = \"Можно ли продлить заказ или вернуть самокат раньше?\"]");
-    private final  By sixthQuestion = By.xpath(".//div[text() = \"Вы привозите зарядку вместе с самокатом?\"]");
+    private final By sixthQuestion = By.xpath(".//div[text() = \"Вы привозите зарядку вместе с самокатом?\"]");
     private final By seventhQuestion = By.xpath(".//div[text() = \"Можно ли отменить заказ?\"]");
     private final By eighthQuestion = By.xpath(".//div[text() = \"Я жизу за МКАДом, привезёте?\"]");
 
@@ -51,26 +51,27 @@ public class HomePage extends BaseSettings {
 
 
     @Before
-    public void setAddress(){
+    public void setAddress() {
         driver.get("https://qa-scooter.praktikum-services.ru/");
     }
-    public void clickOnMakeAnOrderHeaderButton(){
+
+    public void clickOnMakeAnOrderHeaderButton() {
         click(makeAnOrderHeaderButton);
     }
 
-    public void clickOnStatusOfAnOrderButton(){
+    public void clickOnStatusOfAnOrderButton() {
         click(statusOfAnOrderButton);
     }
 
-    public void fillInNumberOfOrder(String number){
+    public void fillInNumberOfOrder(String number) {
         driver.findElement(numberOfOrderField).sendKeys(number);
     }
 
-    public void clickOnCookieButton(){
+    public void clickOnCookieButton() {
         click(cookieButton);
     }
 
-    public String clickOnFirstQuestionAndGetAnAnswer(){
+    public String clickOnFirstQuestionAndGetAnAnswer() {
         scroll(firstQuestion);
         this.waitFor5Seconds();
         click(firstQuestion);
@@ -78,7 +79,7 @@ public class HomePage extends BaseSettings {
         return driver.findElement(firstAnswer).getText();
     }
 
-    public String clickOnSecondQuestionAndGetAnAnswer(){
+    public String clickOnSecondQuestionAndGetAnAnswer() {
         scroll(secondQuestion);
         this.waitFor5Seconds();
         click(secondQuestion);
@@ -86,7 +87,7 @@ public class HomePage extends BaseSettings {
         return driver.findElement(secondAnswer).getText();
     }
 
-    public String clickOnThirdQuestionAndGetAnAnswer(){
+    public String clickOnThirdQuestionAndGetAnAnswer() {
         scroll(thirdQuestion);
         this.waitFor5Seconds();
         click(thirdQuestion);
@@ -94,7 +95,7 @@ public class HomePage extends BaseSettings {
         return driver.findElement(thirdAnswer).getText();
     }
 
-    public String clickOnForthQuestionAndGetAnAnswer(){
+    public String clickOnForthQuestionAndGetAnAnswer() {
         scroll(forthQuestion);
         this.waitFor5Seconds();
         click(forthQuestion);
@@ -102,7 +103,7 @@ public class HomePage extends BaseSettings {
         return driver.findElement(forthAnswer).getText();
     }
 
-    public String clickOnFifthQuestionAndGetAnAnswer(){
+    public String clickOnFifthQuestionAndGetAnAnswer() {
         scroll(fifthQuestion);
         this.waitFor5Seconds();
         click(fifthQuestion);
@@ -110,7 +111,7 @@ public class HomePage extends BaseSettings {
         return driver.findElement(fifthAnswer).getText();
     }
 
-    public String clickOnSixthQuestionAndGetAnAnswer(){
+    public String clickOnSixthQuestionAndGetAnAnswer() {
         scroll(sixthQuestion);
         this.waitFor5Seconds();
         click(sixthQuestion);
@@ -118,7 +119,7 @@ public class HomePage extends BaseSettings {
         return driver.findElement(sixthAnswer).getText();
     }
 
-    public String clickOnSeventhQuestionAndGetAnAnswer(){
+    public String clickOnSeventhQuestionAndGetAnAnswer() {
         scroll(seventhQuestion);
         this.waitFor5Seconds();
         click(seventhQuestion);
@@ -126,7 +127,7 @@ public class HomePage extends BaseSettings {
         return driver.findElement(seventhAnswer).getText();
     }
 
-    public String clickOnEighthQuestionAndGetAnAnswer(){
+    public String clickOnEighthQuestionAndGetAnAnswer() {
         scroll(eighthQuestion);
         this.waitFor5Seconds();
         click(eighthQuestion);
@@ -134,24 +135,24 @@ public class HomePage extends BaseSettings {
         return driver.findElement(eighthAnswer).getText();
     }
 
-    public void clickCookieButton(){
+    public void clickCookieButton() {
         click(cookieButton);
     }
 
-    public String  returnHrefAttributeYandexLogo(){
+    public String returnHrefAttributeYandexLogo() {
         return driver.findElement(yandexLogo).getAttribute("href");
 
     }
 
-    public void clickScooterLogo(){
+    public void clickScooterLogo() {
         click(scooterLogo);
     }
 
-    public void clickOnGoButton(){
+    public void clickOnGoButton() {
         click(GoButton);
     }
 
-    public boolean isWrongNumberOfOrderImageDisplayed(){
+    public boolean isWrongNumberOfOrderImageDisplayed() {
         return driver.findElement(wrongNumberOfOrderImage).isDisplayed();
     }
 }

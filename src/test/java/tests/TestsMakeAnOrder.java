@@ -1,25 +1,14 @@
 package tests;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import page_object.HomePage;
 import page_object.OrderPage;
 
-import java.time.Duration;
 
-public class TestsMakeAnOrder extends BaseUISettings{
-
-    //private OrderPage orderPage = new OrderPage(driver);
+public class TestsMakeAnOrder extends BaseUISettings {
 
     @Test
-    public void orderScooterPositiveTest1(){
+    public void orderScooterPositiveTest1() {
         homePage.clickOnMakeAnOrderHeaderButton();
         OrderPage orderPage = new OrderPage(driver);
         orderPage.fillName("Инна");
@@ -42,7 +31,7 @@ public class TestsMakeAnOrder extends BaseUISettings{
     }
 
     @Test
-    public void orderScooterPositiveTest2(){
+    public void orderScooterPositiveTest2() {
         homePage.clickOnMakeAnOrderHeaderButton();
         OrderPage orderPage = new OrderPage(driver);
         orderPage.fillName("Иван");
@@ -66,7 +55,7 @@ public class TestsMakeAnOrder extends BaseUISettings{
     }
 
     @Test
-    public void checkErrorsOnMakeAnOrderForm(){
+    public void checkErrorsOnMakeAnOrderForm() {
         homePage.clickOnMakeAnOrderHeaderButton();
         OrderPage orderPage = new OrderPage(driver);
         orderPage.fillName("sdf");

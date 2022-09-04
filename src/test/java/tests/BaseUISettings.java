@@ -15,7 +15,7 @@ public abstract class BaseUISettings {
     protected HomePage homePage;
 
     @Before
-    public void setting(){
+    public void setting() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         homePage = new HomePage(driver);
@@ -27,7 +27,7 @@ public abstract class BaseUISettings {
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

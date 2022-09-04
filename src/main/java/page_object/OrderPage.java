@@ -43,7 +43,7 @@ public class OrderPage extends BaseSettings {
     private final By seventhDropdownOption = By.xpath(".//div[text()=\"семеро суток\"]");
 
     //Поле - Комментарий для курьера
-    private final By commentaryField = By. xpath(".//input[@placeholder = \"Комментарий для курьера\"]");
+    private final By commentaryField = By.xpath(".//input[@placeholder = \"Комментарий для курьера\"]");
     //Кнопка на форме "Хотите оформить заказ?" - ДА
     private final By yesButton = By.xpath(".//button[text() = \"Да\"]");
     //Форма успешного оформления заказа
@@ -64,38 +64,38 @@ public class OrderPage extends BaseSettings {
     }
 
     @Before
-    public void setAddress(){
+    public void setAddress() {
         driver.get("https://qa-scooter.praktikum-services.ru/");
     }
 
-    public void fillName (String name){
+    public void fillName(String name) {
         driver.findElement(nameField).sendKeys(name);
     }
 
-    public void fillSurname (String surname){
+    public void fillSurname(String surname) {
         driver.findElement(surnameField).sendKeys(surname);
     }
 
-    public void fillAddress (String address){
+    public void fillAddress(String address) {
         driver.findElement(addressField).sendKeys(address);
     }
 
-    public void fillSubway(){
+    public void fillSubway() {
         driver.findElement(subwayField).click();
         driver.findElement(subwayField).sendKeys("Бульвар Рокоссовского");
         driver.findElement(firstElementSubwayInDropdown).click();
 
     }
 
-    public void fillPhoneNumberField(String phoneNumber){
+    public void fillPhoneNumberField(String phoneNumber) {
         driver.findElement(phoneNumberField).sendKeys(phoneNumber);
     }
 
-    public void clickContinueButton (){
+    public void clickContinueButton() {
         driver.findElement(continueOrderButton).click();
     }
 
-    public void fillInDateOfDelivery(){
+    public void fillInDateOfDelivery() {
         driver.findElement(calendar).click();
         driver.findElement(dateSeptember16).click();
     }
@@ -122,43 +122,43 @@ public class OrderPage extends BaseSettings {
     }
 
     public void markColorOfScooter(int number) {
-        if(number == 1){
+        if (number == 1) {
             driver.findElement(colorOptionBlack).click();
         }
-        if(number == 2){
+        if (number == 2) {
             driver.findElement(colorOptionGrey).click();
         }
     }
 
-    public void clickMakeAnOrderButton (){
+    public void clickMakeAnOrderButton() {
         driver.findElement(lowerButtonMakeAnOrder).click();
     }
 
-    public void clickYes(){
+    public void clickYes() {
         driver.findElement(yesButton).click();
     }
 
-    public boolean isFormOfSuccessfulOrderAppeared(){
+    public boolean isFormOfSuccessfulOrderAppeared() {
         return driver.findElement(formOfSuccessfulOrder).isDisplayed();
     }
 
-    public void fillInCommentaryField(String text){
+    public void fillInCommentaryField(String text) {
         driver.findElement(commentaryField).sendKeys(text);
     }
 
-    public boolean isErrorMessageIsPresentName(){
+    public boolean isErrorMessageIsPresentName() {
         return driver.findElement(incorrectNameErrorMessage).isDisplayed() && driver.findElement(incorrectNameErrorMessage).getText().equals("Введите корректное имя");
     }
 
-    public boolean isErrorMessageIsPresentSurname(){
+    public boolean isErrorMessageIsPresentSurname() {
         return driver.findElement(incorrectSurnameErrorMessage).isDisplayed() && driver.findElement(incorrectSurnameErrorMessage).getText().equals("Введите корректную фамилию");
     }
 
-    public boolean isErrorMessageIsPresentAddress(){
+    public boolean isErrorMessageIsPresentAddress() {
         return driver.findElement(incorrectAddressErrorMessage).isDisplayed() && driver.findElement(incorrectAddressErrorMessage).getText().equals("Введите корректный адрес");
     }
 
-    public boolean isErrorMessageIsPresentPhoneNumber(){
+    public boolean isErrorMessageIsPresentPhoneNumber() {
         return driver.findElement(incorrectPhoneNumberErrorMessage).isDisplayed() && driver.findElement(incorrectPhoneNumberErrorMessage).getText().equals("Введите корректный номер");
     }
 }
